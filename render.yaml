@@ -1,9 +1,14 @@
 services:
   - type: web
     name: expense-iq-backend
-    runtime: java
-    buildCommand: mvn clean install -DskipTests
-    startCommand: java -Dserver.port=$PORT $JAVA_OPTS -jar target/*.jar
+    env: docker
+    region: oregon
+    plan: free
+    healthCheckPath: /actuator/health
     envVars:
-      - key: JAVA_VERSION
-        value: 17
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
