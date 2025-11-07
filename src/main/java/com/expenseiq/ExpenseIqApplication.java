@@ -1,0 +1,14 @@
+package com.expenseiq;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
+
+@SpringBootApplication
+@EnableScheduling
+public class ExpenseIqApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(ExpenseIqApplication.class, args);
+    }
+}
